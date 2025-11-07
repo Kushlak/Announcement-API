@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 using TestAssignment.Controllers.Data;
 
 namespace TestAssignment.Controllers
@@ -11,11 +9,7 @@ namespace TestAssignment.Controllers
     public class AnnouncementController(AnnouncementDbContext context): ControllerBase
     {
         private readonly AnnouncementDbContext _context = context;
-        //public AnnouncementController(AnnouncementDbContext context)
-        //{
-        //    _context = context;
-        //}
-
+        
         [HttpGet("GetAllAnnouncements")]
         public async Task<ActionResult<List<Announcement>>> GetAllAnnouncements()
         {
@@ -37,6 +31,8 @@ namespace TestAssignment.Controllers
         {
             if (newAnnounce is null)
                 return BadRequest();
+
+            newAnnounce.DateAdded = DateTime.UtcNow;
 
             _context.Announcements.Add(newAnnounce);
             await _context.SaveChangesAsync();
@@ -83,7 +79,6 @@ namespace TestAssignment.Controllers
                     .Take(3)
                     .ToListAsync());
 
-            // один великий патерн "word1|word2|word3" → простіше для EF
             var pattern = "%" + q.Replace(" ", "%") + "%";
 
             var list = await _context.Announcements
