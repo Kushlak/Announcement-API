@@ -1,52 +1,6 @@
 [
   {
     "ContainingType": "TestAssignment.Controllers.AnnouncementController",
-    "Method": "GetAllAnnouncements",
-    "RelativePath": "api/Announcement",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[TestAssignment.Announcement, TestAssignment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "TestAssignment.Controllers.AnnouncementController",
-    "Method": "AddAnnouncment",
-    "RelativePath": "api/Announcement",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "newAnnounce",
-        "Type": "TestAssignment.Announcement",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "TestAssignment.Announcement",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "TestAssignment.Controllers.AnnouncementController",
     "Method": "GetAnnouncementById",
     "RelativePath": "api/Announcement/{id}",
     "HttpMethod": "GET",
@@ -110,6 +64,32 @@
   },
   {
     "ContainingType": "TestAssignment.Controllers.AnnouncementController",
+    "Method": "AddAnnouncment",
+    "RelativePath": "api/Announcement/add Announcement",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newAnnounce",
+        "Type": "TestAssignment.Announcement",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TestAssignment.Announcement",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TestAssignment.Controllers.AnnouncementController",
     "Method": "GetAnnouncementsFiltered",
     "RelativePath": "api/Announcement/filtered",
     "HttpMethod": "GET",
@@ -135,16 +115,16 @@
     ]
   },
   {
-    "ContainingType": "TestAssignment.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "TestAssignment.Controllers.AnnouncementController",
+    "Method": "GetAllAnnouncements",
+    "RelativePath": "api/Announcement/GetAllAnnouncements",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[TestAssignment.WeatherForecast, TestAssignment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[TestAssignment.Announcement, TestAssignment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -152,7 +132,6 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetWeatherForecast"
+    ]
   }
 ]
